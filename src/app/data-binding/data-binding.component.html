@@ -1,0 +1,37 @@
+<h1>Data Binding</h1>
+<h2>Interpolation</h2>
+<p>exemplo de Interpolation -> {{idade}}</p>
+
+<hr>
+
+<h2>Property Binding</h2>
+<button [disabled]="check">button</button>
+<div><img [src]="img" [title]="imgNome"></div>
+
+<hr>
+
+<h2>Event Binding</h2>
+
+<button (click)="mudarCheck('deu certo a clicada😈')">button</button>
+<br>
+<button (click)="mouseEventTeste($event)">Event</button>
+<br>
+<div (mousemove)="mouseMoveTeste($event)" style = "background: red; width:150px; height: 100px"></div>
+{{position.x}} - {{position.y}}
+
+<hr>
+
+<h2>Two-Way Binding</h2>
+
+<label for="">nome</label>
+<input [(ngModel)]="pessoa.nome" placeholder="Insira seu nome">
+<br>
+<label for="">idade</label>
+<input [(ngModel)]="pessoa.idade" placeholder="Insira sua idade">
+<br>
+<button (click)="inserirPessoa()">add</button>
+
+<div *ngFor="let pessoa of pessoas">
+    <p>Nome: {{pessoa.nome}}</p>
+    <p>Idade: {{pessoa.idade}}</p> 
+</div>
